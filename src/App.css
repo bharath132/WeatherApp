@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*{
+  font-family: "Poppins", sans-serif;
+}
+#root {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(44, 41, 41);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(54, 159, 230);
+}
+.input_section {
+  margin: 20px auto;
+  height: 30px;
+  width: 300px;
+  border: solid rgb(39, 182, 248);
+  padding: 0 2px;
+  display: flex;
+  border-radius: 10px;
+}
+.input_section input {
+  flex: 1;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+  border-radius: 10px;
+}
+.input_section i {
+  margin: auto 5px;
+  cursor: pointer;
+}
+.weather_section {
+  width: 350px;
+  text-align: center;
+  margin: 0 auto;
+  color: grey;
+  /* border: solid; */
+}
+.weather_section h1{
+  color: rgb(97, 92, 92);
+}
+.weather_section i {
+  font-size: 180px;
+  color: rgb(39, 182, 248);
+}
+.weather_section .city {
+  color: rgb(39, 182, 248);
+  text-transform: uppercase;
+}
+
+.location {
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  margin-top: 20px;
+  color: rgb(163, 162, 162);
+  font-size: small;
+}
+.location span{
+  color: rgb(97, 92, 92);
+}
+
+.data_container {
+  display: flex;
+  /* gap: 50px; */
+  justify-content: space-between;
+  margin: 50px 30px 20px 30px;
+  color: rgb(163, 162, 162);
+  font-size: 17px;
+}
+.data_container i {
+  font-size: 45px;
+  color: #74c0fc;
+  margin-bottom: 10px;
+}
+
+.element img {
+  width: 50px;
+}
+.element h5 {
+  /* color: rgb(39, 182, 248); */
+}
+
+.data h4{
+  color: rgb(97, 92, 92);
+}

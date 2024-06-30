@@ -42,18 +42,49 @@ function App() {
   const [lat,setLat]=useState('')
   const [humidity,setHumidity]=useState('')
   const [speed,setSpeed]=useState('')
+  const [flat,setflat]=useState('')
   const APIkey='d4a4ece67aa095bda0a2b3d28d63f93b'
 
-  useEffect(() => {
-    // Your effect logic here
 
-    return () => {
-      // setText('chennai')
-      search()
-    };
-  }, [/* Dependencies */]);
+  function gotlocation(position){
+  const flat =(position.coords.latitude)
+  const flog=position.coords.longitude
+  
+  start(flat,flog)
+  // search()
+  
+}
+
+// console.log(lat)
 
 
+function failedlocation(){
+  console.log("hello")
+}
+  const loc= async ()=>{
+    
+    fetch(navigator.geolocation.getCurrentPosition(gotlocation,failedlocation))
+    
+  }
+    const start= async (flat,flog)=>{
+      
+        
+   
+      
+        // console.log(position.coords.latitude)
+        const res= await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${flat}&lon=${flog}&appid=${APIkey}&units=metric`)
+        const data= await res.json()
+        console.log(data)
+        setTemp(data.main.temp)
+        setCity(data.name)
+        setTPlcae(data.sys.country)
+        setLog(data.coord.lon)
+        setLat(data.coord.lat)
+        setHumidity(data.main.humidity)
+        setSpeed(data.wind.speed)
+     
+    }
+ 
 
   const search =async () =>{
     try  {
@@ -81,6 +112,14 @@ function App() {
       search()
     }
   }
+  useEffect(() => {
+    // Your effect logic here
+    
+    // setText('chennai')
+    
+    loc()
+  }, []);
+
   return (
     <>
       <div className="container">
